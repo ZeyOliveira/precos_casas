@@ -27,26 +27,45 @@ modelo = carregar_modelo()
 
 st.title("Previsão de preços de imóveis")
 
-latitude = st.number_input("Latitude", value=-122.38)
-longitude = st.number_input("Longitude", value=37.88)
+condados = list(df_gpd["name"].sort_values())   # Lista ordenada dos nomes dos condados.
 
-housing_median_age = st.number_input("Idade do imóvel", value=10)
-total_rooms = st.number_input("Total de cômodos", value=880)
-total_bedrooms = st.number_input("Total de quartos", value=129)
-population = st.number_input("População", value=322)
-households = st.number_input("Domicílios", value=126)
+condado_selecionado = st.selectbox("Condado", options=condados)   # Condados selecionado pelo usuário na "home".
 
-median_income = st.slider(
-    "Renda média (múltiplos de US$ 10k)", min_value=0.5, max_value=15.0, value=4.5, step=0.5
+latitude = df_gpd.query("name == @condado_selecionado")['latitude'].values # Filtrando o GeoPandasDF pelo nome do condado selecionado, e retornando específicamente o valor da coluna "latitude".
+
+
+longitude = df_gpd.query("name == @condado_selecionado")['longitude'].values # A mesma coisa!, porém retornando o valor da coluna "longitude".
+
+housing_median_age = st.number_input(
+    "Idade do imóvel", 
+    value=10,
+    min_value=df["housing_median_age"].min(),
+    max_value=df["housing_median_age"].max()
 )
 
-ocean_proximity = st.selectbox("Proximidade do Oceano", df["ocean_proximity"].unique())
 
-median_income_cat = st.number_input("Categoria de Renda", value=4)
+total_rooms = df_gpd.query("name == @condado_selecionado")['total_rooms'].values
+total_bedrooms = df_gpd.query("name == @condado_selecionado")['total_bedrooms'].values
+population = df_gpd.query("name == @condado_selecionado")['population'].values
+households = df_gpd.query("name == @condado_selecionado")['households'].values
 
-rooms_per_household = st.number_input("Quartos por Domicílio", value=6.99)
-population_per_household = st.number_input("Pessoas por Domicílio", value=2.55)
-bedrooms_per_room = st.number_input("Quartos por Cômodo", value=0.26)
+
+median_income = st.slider(
+    "Renda média (milhares de US$)",
+    min_value=5.0,
+    max_value=104.0,
+    value=45.0,
+    step=5.0
+)
+
+ocean_proximity = df_gpd.query("name == @condado_selecionado")['ocean_proximity'].values
+
+bins_income = [0, 1.5, 3, 4.5, 6, np.inf]
+median_income_cat = np.digitize(median_income / 10, bins=bins_income)
+
+rooms_per_household = df_gpd.query("name == @condado_selecionado")['rooms_per_household'].values
+population_per_household = df_gpd.query("name == @condado_selecionado")['population_per_household'].values
+bedrooms_per_room = df_gpd.query("name == @condado_selecionado")['bedrooms_per_room'].values
 
 entrada_modelo = {
     "latitude": latitude,
@@ -56,7 +75,7 @@ entrada_modelo = {
     "total_bedrooms": total_bedrooms,
     "population": population,
     "households": households,
-    "median_income": median_income,
+    "median_income": median_income / 10,
     "ocean_proximity": ocean_proximity,
     "median_income_cat": median_income_cat,
     "rooms_per_household": rooms_per_household,
@@ -70,6 +89,7 @@ botao_previsao = st.button("Prever preço")
 
 if botao_previsao:
     preco = modelo.predict(df_entrada_modelo)
-    st.write(f"Preço previsto: US$ {preco}")
+    st.write(f"Preço previsto: US$ {preco[0][0]:,.2f}")
+
 
 

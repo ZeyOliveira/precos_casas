@@ -1,4 +1,4 @@
-name: regressao_linear
+name: machine_learning
 channels:
   - conda-forge
   - defaults
@@ -273,4 +273,4 @@ dependencies:
       - tenacity==8.5.0
       - toml==0.10.2
       - watchdog==4.0.2
-prefix: C:\Users\zeygl\anaconda3\envs\regressao_linear
+prefix: C:\Users\zeygl\anaconda3\envs\machine_learning

@@ -70,7 +70,7 @@ st.title("Previsão de preços de imóveis")
 condados = sorted(df_gpd["name"].unique())   # Lista ordenada dos nomes dos condados.
 
 coluna1, coluna2 = st.columns(2)
-
+print(pandas__version__)
 with coluna1:
     with st.form(key='formulario'):
         condado_selecionado = st.selectbox("Condado", options=condados)   # Condados selecionado pelo usuário na "home".

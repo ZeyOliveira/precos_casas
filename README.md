@@ -4,6 +4,13 @@
 # California Housing Prices 🏡
 
 Este repositório contém análises e insights baseados no conjunto de dados **California Housing Prices**, disponível no Kaggle. Esse dataset fornece informações sobre preços medianos de casas em distritos da Califórnia, utilizando dados do censo de 1990. Ele é amplamente utilizado para experimentação em aprendizado de máquina, regressão e visualização de dados.
+[Link original para o dataset](https://www.kaggle.com/vjchoudhary7/customer-segmentation-tutorial-in-python)
+
+<p align="center"> 
+  <a href="https://www.linkedin.com/in/zeygler-oliveira-a021a92a4/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+</p>
+
+![geomap](https://github.com/ZeyOliveira/precos_casas/blob/master/relatorios/imagens/analise_geo.png)
 
 ## Conteúdo
 - Descrição dos dados disponíveis 📑: `01_dicionario_de_dados.md`
@@ -32,8 +39,7 @@ O propósito deste projeto é investigar padrões de preços de habitação na C
 ├── modelos            <- Modelos treinados e serializados, previsões de modelos ou resumos de modelos
 |
 ├── notebooks          <- Cadernos Jupyter. A convenção de nomenclatura é um número (para ordenação),
-│                         as iniciais do criador e uma descrição curta separada por `-`, por exemplo
-│                         `01-zo-exploracao-inicial-de-dados`.
+│                         as iniciais do criador e uma descrição curta separada por `-`.
 │
 |   └──src             <- Código-fonte para uso neste projeto.
 |      │

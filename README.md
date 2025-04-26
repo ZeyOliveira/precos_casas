@@ -1,13 +1,28 @@
 [![author](https://img.shields.io/badge/Zeygler&nbsp;Oliveira-red.svg)](https://www.linkedin.com/in/zeygler-oliveira-a021a92a4/)
 [![](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
 
+# California Housing Prices 🏡
+
+Este repositório contém análises e insights baseados no conjunto de dados **California Housing Prices**, disponível no Kaggle. Esse dataset fornece informações sobre preços medianos de casas em distritos da Califórnia, utilizando dados do censo de 1990. Ele é amplamente utilizado para experimentação em aprendizado de máquina, regressão e visualização de dados.
+
+## Conteúdo
+- Descrição dos dados disponíveis 📑: `01_dicionario_de_dados.md`
+
+
+## Objetivo
+O propósito deste projeto é investigar padrões de preços de habitação na Califórnia, explorando fatores como localização geográfica, população e renda média. A partir dessas análises, buscamos construir modelos preditivos para estimar valores imobiliários com base nos atributos fornecidos.
+
 
 
 
 ## Organização do projeto
 
 ```
-├── .gitignore         <- Arquivos e diretórios a serem ignorados pelo Git
+├── .gitignore         <- Arquivos e diretórios a serem ignorados pelo Git Por padrão, o arquivo `.gitignore` já está configurado para ignorar arquivos de dados e
+                          arquivos de Notebook (para aqueles que usam ferramentas como
+                          [Jupytext](https://jupytext.readthedocs.io/en/latest/) e similares).    
+
+
 ├── requirements.txt       <- O arquivo de requisitos para reproduzir o ambiente de análise
 ├── LICENSE            <- Licença de código aberto se uma for escolhida
 ├── README.md          <- README principal para desenvolvedores que usam este projeto.
@@ -25,7 +40,9 @@
 |      ├── __init__.py  <- Torna um módulo Python
 |      ├── config.py    <- Configurações básicas do projeto
 |      └── graficos.py  <- Scripts para criar visualizações exploratórias e orientadas a resultados
-|
+|      └── auxiliares.py  <- Scripts para criar visualizações exploratórias e orientadas a resultados
+|      └── models.py  <- Scripts utilizados para criar, treinar, testar e organizar modelos de ML  
+| 
 ├── referencias        <- Dicionários de dados, manuais e todos os outros materiais explicativos.
 |
 ├── relatorios         <- Análises geradas em HTML, PDF, LaTeX, etc.
@@ -42,40 +59,10 @@
 
 2. Crie um ambiente virtual para o seu projeto utilizando o gerenciador de ambientes de sua preferência.
 
-    a. Caso esteja utilizando o `conda`, exporte as dependências do ambiente para o arquivo `ambiente.yml`:
+    a. Caso esteja utilizando o `conda`, exporte as dependências do ambiente para o arquivo `requirements.txt`:
 
       ```bash
-      conda env export > ambiente.yml
+      conda env export > requirements.txt
       ```
-
-    b. Caso esteja utilizando outro gerenciador de ambientes, exporte as dependências
-    para o arquivo `requirements.txt` ou outro formato de sua preferência. Adicione o
-    arquivo ao controle de versão, removendo o arquivo `ambiente.yml`.
-
-3. Verifique o arquivo `notebooks/01-fb-exemplo.ipynb` para exemplos
-de uso do código.
-4. Renomeie o arquivo `notebooks/01-fb-exemplo.ipynb` para um nome
-mais apropriado ao seu projeto. E siga a convenção de nomenclatura para os demais
-notebooks.
-5. Remova arquivos de exemplo e adicione os arquivos de dados e notebooks do seu
-projeto.
-6. Verifique o arquivo `notebooks/src/config.py` para configurações básicas do projeto.
-Modifique conforme necessário, adicionando ou removendo caminhos de arquivos e
-diretórios.
-7. Atualize o arquivo `referencias/01_dicionario_de_dados.md` com o dicionário de dados
-do seu projeto.
-8. Atualize o `README.md` com informações sobre o seu projeto.
-9. Adicione uma licença ao projeto. Clique
-[aqui](https://docs.github.com/pt/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
-se precisar de ajuda para escolher uma licença.
-10. Renomeie o arquivo `.env.exemplo` para `.env`
-11. Adicione variáveis de ambiente sensíveis ao arquivo `.env`.
-
-Por padrão, o arquivo `.gitignore` já está configurado para ignorar arquivos de dados e
-arquivos de Notebook (para aqueles que usam ferramentas como
-[Jupytext](https://jupytext.readthedocs.io/en/latest/) e similares). Adicione ou remova
-outros arquivos e diretórios do `.gitignore` conforme necessário. Caso deseje adicionar
-forçadamente um Notebook ao controle de versão, faça um commit forçado com o
-comando `git add --force NOME_DO_ARQUIVO.ipynb`.
 
 Para mais informações sobre como usar Git e GitHub, [clique aqui](https://cienciaprogramada.com.br/2021/09/guia-definitivo-git-github/). Sobre ambientes virtuais, [clique aqui](https://cienciaprogramada.com.br/2020/08/ambiente-virtual-projeto-python/).

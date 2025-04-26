@@ -16,23 +16,44 @@ Este repositório contém análises e insights baseados no conjunto de dados **C
 - Descrição dos dados disponíveis 📑: `01_dicionario_de_dados.md`
 
 
+
 ## Objetivo
 O propósito deste projeto é investigar padrões de preços de habitação na Califórnia, explorando fatores como localização geográfica, população e renda média. A partir dessas análises, buscamos construir modelos preditivos para estimar valores imobiliários com base nos atributos fornecidos.
+
 
 
 ##  Uma análise do mercado imobiliário na Califórnia: o que os dados me contaram?  
 
 Quando comecei a explorar os dados do *California Housing Prices*, achei que ia ser só um monte de números sobre casas. Mas aí, comecei a perceber umas tendências que fizeram MUITO sentido no mundo real!  
 
+
 ### **Quanto mais perto do mar, mais caro!**
 Uma das primeiras coisas que me chamou atenção foi que as casas mais perto do oceano costumam ter preços bem mais altos. Faz sentido, né? Quem não quer acordar vendo o mar, sentir aquela brisa boa e ainda estar perto de praias famosas? Além da vista, tem a questão da valorização: lugares bonitos e disputados acabam ficando mais caros porque todo mundo quer morar lá. Afinal, quem não gostaria de acordar todos os dias com o som das ondas? 
+
 
 ### **Dinheiro chama dinheiro**
 Outra coisa interessante foi perceber que existe uma relação entre a renda da população e o preço das casas. Onde a renda média é mais alta, os preços dos imóveis também sobem. Isso pode estar ligado à infraestrutura, segurança e serviços disponíveis nessas regiões. Ou seja, se o bairro tem escolas boas, comércio forte e qualidade de vida top, ele se torna mais exclusivo e, claro, mais caro.  
 
+
 ### O que isso me ensinou?  
 Antes, eu via preço de casa como algo meio aleatório, mas depois dessa análise percebi que dá pra entender muita coisa com números e padrões. Esses dados mostram um pouco de como o mercado imobiliário funciona na Califórnia, e dá pra usar isso pra prever preços, analisar investimentos e até entender melhor como cidades evoluem. Com o avanço das cidades e o aumento da demanda por locais privilegiados, essa relação entre localização, renda e valorização do imóvel provavelmente permanecerá como um dos pilares do setor. 
 
+
+
+---
+
+#  **Preveja o preço das casas na Califórnia!**  
+
+Quer saber quanto custaria uma casa em diferentes regiões da Califórnia? Meu site interativo usa **Machine Learning** para prever preços!   
+
+##  Como funciona?  
+Com apenas alguns cliques, você pode ajustar os seguintes fatores e descobrir como eles influenciam no preço:  
+✅ **Renda da região** → Simule diferentes faixas de renda e veja como isso impacta no valor das casas.  
+✅ **Condado** → Escolha entre diferentes áreas da Califórnia e observe as diferenças nos preços.  
+✅ **Idade da casa** → Modifique a idade da construção com o botão **"+" e "-"** para ver como isso afeta a valorização!  
+✅ **Botão "Prever Preço"** → Depois de configurar os atributos, clique no botão para que o modelo calcule instantaneamente o valor estimado da casa!   
+
+🔗 **Acesse o site aqui:** [PREVER PREÇOS](https://precoscasas.streamlit.app/)  
 
 
 ## Organização do projeto
